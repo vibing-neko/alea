@@ -1,0 +1,226 @@
+/* ───────── 共用 token ───────── */
+:root {
+	--font-mono: 'DM Mono', ui-monospace, monospace;
+	--header-h: 72px;
+	--tabbar-h: 68px;
+	--gutter: clamp(16px, 4vw, 44px);
+	--noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ───────── Noir 午夜賭場 ───────── */
+:root[data-theme="noir"] {
+	color-scheme: dark;
+	--bg: #0d1f1a;
+	--surface: #11281f;
+	--surface-2: #173428;
+	--ink: #efe6d2;
+	--ink-soft: #a9a08a;
+	--ink-faint: #6c7466;
+	--accent: #c9a45c;
+	--accent-soft: rgba(201, 164, 92, 0.14);
+	--accent-ink: #1a1408;
+	--accent-2: #9b3434;
+	--line: rgba(201, 164, 92, 0.2);
+	--line-strong: rgba(201, 164, 92, 0.6);
+	--border-w: 1px;
+	--radius: 3px;
+	--radius-lg: 8px;
+	--shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8);
+	--shadow-btn: 0 10px 24px -12px rgba(201, 164, 92, 0.5);
+	--shadow-press: 0 4px 10px -6px rgba(201, 164, 92, 0.5);
+	--press-shift: 0px;
+	--font-display: 'Cormorant Garamond', 'Noto Serif TC', serif;
+	--font-display-weight: 600;
+	--font-body: 'Noto Sans TC', system-ui, sans-serif;
+	--display-tracking: 0.01em;
+	--page-bg:
+		radial-gradient(ellipse 80% 60% at 50% -10%, #1f3f32 0%, transparent 70%),
+		radial-gradient(ellipse 70% 50% at 50% 115%, #050c09 0%, transparent 70%),
+		#0d1f1a;
+	--noise-opacity: 0.07;
+	--noise-blend: overlay;
+	--primary-bg: linear-gradient(180deg, #e2c47f 0%, #c9a45c 45%, #a7843f 100%);
+
+	--w1: #143a2c; --w1-ink: #efe6d2;
+	--w2: #9b3434; --w2-ink: #f6ead2;
+	--w3: #efe6d2; --w3-ink: #1a1408;
+	--w4: #c9a45c; --w4-ink: #1a1408;
+	--w5: #1d2c42; --w5-ink: #efe6d2;
+	--w6: #5a2430; --w6-ink: #efe6d2;
+	--wheel-rim: #c9a45c;
+	--wheel-rim-2: #6e5627;
+	--wheel-hub: #0d1f1a;
+	--wheel-hub-ink: #c9a45c;
+	--wheel-divider: rgba(201, 164, 92, 0.55);
+
+	--coin-hi: #fff0bd;
+	--coin-mid: #d6ae5c;
+	--coin-lo: #8d6824;
+	--coin-deep: #5a4113;
+	--coin-relief: #e2bf6d;
+	--coin-edge: #8f6c29;
+	--coin-edge-hi: #d3b062;
+	--coin-arc-font: 'Cormorant Garamond', serif;
+	--coin-numeral-font: 'Noto Serif TC', serif;
+
+	--die-face: linear-gradient(145deg, #faf4e4 0%, #efe5cc 100%);
+	--die-pip: #1a1408;
+	--die-pip-red: #9b3434;
+	--die-edge: #c8b993;
+	--die-round: #e6dbbc;
+	--die-round-mid: #dccfab;
+	--die-face-shade: rgba(190, 168, 118, 0.45);
+	--poly-fill: #c9a45c;
+	--poly-ink: #1a1408;
+	--poly-line: rgba(26, 20, 8, 0.28);
+
+	--confetti-1: #c9a45c;
+	--confetti-2: #efe6d2;
+	--confetti-3: #9b3434;
+	--confetti-4: #f2d993;
+}
+
+/* ───────── Washi 紙本籤詩 ───────── */
+:root[data-theme="washi"] {
+	color-scheme: light;
+	--bg: #f4efe4;
+	--surface: #fbf8f1;
+	--surface-2: #ece4d3;
+	--ink: #1f1b16;
+	--ink-soft: #5f574b;
+	--ink-faint: #9a9081;
+	--accent: #c23b22;
+	--accent-soft: rgba(194, 59, 34, 0.09);
+	--accent-ink: #fff8ef;
+	--accent-2: #2d4a6b;
+	--line: rgba(31, 27, 22, 0.14);
+	--line-strong: rgba(31, 27, 22, 0.75);
+	--border-w: 1px;
+	--radius: 2px;
+	--radius-lg: 3px;
+	--shadow: 0 1px 0 rgba(31, 27, 22, 0.05);
+	--shadow-btn: none;
+	--shadow-press: none;
+	--press-shift: 1px;
+	--font-display: 'LXGW WenKai TC', 'Noto Serif TC', serif;
+	--font-display-weight: 700;
+	--font-body: 'Noto Serif TC', serif;
+	--display-tracking: 0.04em;
+	--page-bg:
+		radial-gradient(ellipse 60% 40% at 85% 0%, rgba(194, 59, 34, 0.06) 0%, transparent 70%),
+		#f4efe4;
+	--noise-opacity: 0.16;
+	--noise-blend: multiply;
+	--primary-bg: #c23b22;
+
+	--w1: #f9f5ec; --w1-ink: #1f1b16;
+	--w2: #1f1b16; --w2-ink: #f4efe4;
+	--w3: #c23b22; --w3-ink: #fff8ef;
+	--w4: #e6dcc6; --w4-ink: #1f1b16;
+	--w5: #2d4a6b; --w5-ink: #f4efe4;
+	--w6: #b08d57; --w6-ink: #1f1b16;
+	--wheel-rim: #1f1b16;
+	--wheel-rim-2: #1f1b16;
+	--wheel-hub: #f4efe4;
+	--wheel-hub-ink: #c23b22;
+	--wheel-divider: rgba(31, 27, 22, 0.5);
+
+	--coin-hi: #f2cfa0;
+	--coin-mid: #b47d46;
+	--coin-lo: #6f4622;
+	--coin-deep: #4a2c12;
+	--coin-relief: #c38d55;
+	--coin-edge: #7b5128;
+	--coin-edge-hi: #b8854e;
+	--coin-arc-font: 'Cormorant Garamond', serif;
+	--coin-numeral-font: 'Noto Serif TC', serif;
+
+	--die-face: #fbf8f1;
+	--die-pip: #1f1b16;
+	--die-pip-red: #c23b22;
+	--die-edge: #d6ccb8;
+	--die-round: #e8e0cd;
+	--die-round-mid: #ded4bf;
+	--die-face-shade: rgba(170, 155, 125, 0.35);
+	--poly-fill: #1f1b16;
+	--poly-ink: #f4efe4;
+	--poly-line: rgba(244, 239, 228, 0.3);
+
+	--confetti-1: #c23b22;
+	--confetti-2: #1f1b16;
+	--confetti-3: #d8c8a8;
+	--confetti-4: #2d4a6b;
+}
+
+/* ───────── Carnival 遊樂園 ───────── */
+:root[data-theme="carnival"] {
+	color-scheme: light;
+	--bg: #fff1d6;
+	--surface: #ffffff;
+	--surface-2: #ffe6b8;
+	--ink: #2b1a3f;
+	--ink-soft: #5c4a72;
+	--ink-faint: #9a8aab;
+	--accent: #e63946;
+	--accent-soft: rgba(230, 57, 70, 0.12);
+	--accent-ink: #ffffff;
+	--accent-2: #1d7fd1;
+	--accent-3: #ffc93c;
+	--accent-4: #2ec4b6;
+	--line: #2b1a3f;
+	--line-strong: #2b1a3f;
+	--border-w: 3px;
+	--radius: 14px;
+	--radius-lg: 22px;
+	--shadow: 6px 6px 0 #2b1a3f;
+	--shadow-btn: 4px 4px 0 #2b1a3f;
+	--shadow-press: 1px 1px 0 #2b1a3f;
+	--press-shift: 3px;
+	--font-display: 'Shrikhand', 'Noto Sans TC', sans-serif;
+	--font-display-weight: 900;
+	--font-body: 'Noto Sans TC', system-ui, sans-serif;
+	--display-tracking: 0;
+	--page-bg:
+		repeating-conic-gradient(from -3deg at 50% -20%, #fff1d6 0deg 6deg, #ffe8bf 6deg 12deg);
+	--noise-opacity: 0.05;
+	--noise-blend: multiply;
+	--primary-bg: #e63946;
+
+	--w1: #e63946; --w1-ink: #ffffff;
+	--w2: #fff1d6; --w2-ink: #2b1a3f;
+	--w3: #1d7fd1; --w3-ink: #ffffff;
+	--w4: #ffc93c; --w4-ink: #2b1a3f;
+	--w5: #2ec4b6; --w5-ink: #2b1a3f;
+	--w6: #ff8fab; --w6-ink: #2b1a3f;
+	--wheel-rim: #2b1a3f;
+	--wheel-rim-2: #e63946;
+	--wheel-hub: #ffc93c;
+	--wheel-hub-ink: #2b1a3f;
+	--wheel-divider: #2b1a3f;
+
+	--coin-hi: #fff7c2;
+	--coin-mid: #ffcc40;
+	--coin-lo: #e3921a;
+	--coin-deep: #9a5a0c;
+	--coin-relief: #ffd95e;
+	--coin-edge: #2b1a3f;
+	--coin-edge-hi: #e3921a;
+	--coin-arc-font: 'Shrikhand', serif;
+	--coin-numeral-font: 'Shrikhand', serif;
+
+	--die-face: #ffffff;
+	--die-pip: #2b1a3f;
+	--die-pip-red: #e63946;
+	--die-edge: #2b1a3f;
+	--die-round: #ece6f3;
+	--die-round-mid: #ddd3e8;
+	--die-face-shade: rgba(43, 26, 63, 0.16);
+	--poly-fill: #1d7fd1;
+	--poly-ink: #ffffff;
+	--poly-line: rgba(255, 255, 255, 0.35);
+
+	--confetti-1: #e63946;
+	--confetti-2: #1d7fd1;
+	--confetti-3: #ffc93c;
+	--confetti-4: #2ec4b6;
+}

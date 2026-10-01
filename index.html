@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-theme="noir">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<title>Alea — 讓天意替你決定</title>
+	<meta name="description" content="Alea：轉盤、硬幣、骰子，幫你做出選擇的小工具。">
+	<meta name="theme-color" content="#0d1f1a">
+	<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Mono:wght@400;500&family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@400;600;900&family=Shrikhand&display=swap">
+	<script>
+		// 在繪製前套用主題，避免閃爍
+		(function () {
+			var t
+			try { t = JSON.parse(localStorage.getItem('alea:theme')) } catch (e) {}
+			if (['noir', 'washi', 'carnival'].indexOf(t) < 0) {
+				t = matchMedia('(prefers-color-scheme: light)').matches ? 'washi' : 'noir'
+			}
+			document.documentElement.dataset.theme = t
+		})()
+	</script>
+</head>
+<body>
+	<div id="app"></div>
+	<script type="module" src="/src/main.js"></script>
+</body>
+</html>
